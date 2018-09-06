@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +7,7 @@ public class PlayerTwo : Player {
 
     public GameObject wayPoint;
     private float timer = 0.5f;
+    public ParticleSystem specialActionButton;
 
     public List<GameObject> customers = new List<GameObject>();
 
@@ -21,6 +22,8 @@ public class PlayerTwo : Player {
     // Update is called once per frame
     void Update()
     {
+        SpecialActionButton();
+
         if (timer > 0)
         {
             timer -= Time.deltaTime;
@@ -42,6 +45,15 @@ public class PlayerTwo : Player {
     void UpdatePosition()
     {
         wayPoint.transform.position = transform.position;
+    }
+
+    void SpecialActionButton()
+    {
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            Instantiate(specialActionButton, transform.position, transform.rotation);
+            specialActionButton.Play();
+        }
     }
 
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,10 +8,6 @@ public class Player : MonoBehaviour {
     public string PlayerName;
     public int Health;
 
-    
-
- 
-	
 
     public void PlayerOneMovement()
     {
